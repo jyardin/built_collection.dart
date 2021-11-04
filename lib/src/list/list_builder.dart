@@ -38,11 +38,7 @@ class ListBuilder<E> {
 
   /// Replaces all elements with elements from an [Iterable].
   void replace(Iterable iterable) {
-    if (iterable is _BuiltList<E>) {
-      _setOwner(iterable);
-    } else {
-      _setSafeList(List<E>.from(iterable));
-    }
+    _setOwner(iterable as _BuiltList<E>);
   }
 
   // Based on List.
